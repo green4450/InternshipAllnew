@@ -151,7 +151,7 @@ if($res)
           ?>
           </div>
           
-    		
+    		<!-- 
     		<div class="col-md-4">
     		    <div class="card profile-card-2">
                         <div class="form-group float-right form-check">
@@ -287,7 +287,7 @@ if($res)
                     </div>
                 </div>
     		</div>
-    	    
+    	     -->
     	</div>
     </div>
 </div>

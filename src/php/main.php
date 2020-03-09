@@ -1,4 +1,4 @@
-<?php
+z<?php
 
 
 // Include the database file
@@ -235,11 +235,12 @@ $expiration_date=mysqli_real_escape_string($conn,$_POST['expiration_date']);
 
    $sql= "INSERT INTO `posted_internship`(`id`, `url`, `title`, `content`, `city`, `country`, `company`, `salary`, `StartDate`, `contract`, `working_hours`, `experience`, `category`, `requirements`, `date`, `duration`, `expiration_date`) VALUES ('$id','$url','$tittle','$content','$city','$country','$company','$salary','$SatrtDate','$contract','$working_hours','$experience','$category','$requirements','$date','$duration','$expiration_date')";
    $res = mysqli_query($conn,$sql);
-   if($res){
-       header("Location:../../post_internship.php?task=success");
+   if($res)
+   {
+       header("Location:../../after_post.php?city=".$city);
    }
    else
-   {
+    {
     header("Location:../../post_internship.php?task=unsuccessful");
 }
 }

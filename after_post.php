@@ -92,7 +92,14 @@ body{font-family:Nunito,arial,sans-serif;}
   </div>
 </div>
 </div>
-
+<?php
+include './src/php/dbh.php';
+$city=$_GET['city'];
+$sql="SELECT * FROM `student_register` WHERE `student_register`.`location_u` = 'Dehradun'";
+$res=mysqli_query($conn,$sql);
+if($res)
+{
+?>
 
 <div class="section">
     <div class="container">
@@ -102,8 +109,13 @@ body{font-family:Nunito,arial,sans-serif;}
     	    </div>
     	</div>
     	<div class="row">
-
-        <div class="col-md-4">
+     
+        
+        <?php 
+        while($row=mysqli_fetch_assoc($res))
+              {
+  echo'          <div class="col-md-4">
+  
               <div class="card profile-card-2">
                         <div class="form-group float-right form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -116,10 +128,10 @@ body{font-family:Nunito,arial,sans-serif;}
                           <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile"/>
                           <h5 class="card-title">
                           <a href="./user_profile.php">
-                            Test User 1
+                          '.$row['first_name'].'
                           </a>
                           </h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry's standard dummy text</p>
+                          <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry standard dummy text</p>
                           <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
                           <button class="btn btn-sm btn-primary">Call for Internview</button>
                           <button class="btn btn-sm btn-primary">Hold</button>
@@ -127,8 +139,18 @@ body{font-family:Nunito,arial,sans-serif;}
                           <button href="./chat_profile.php" class="btn btn-sm btn-primary">Message</button>
 
                       </div>
+                      </div>
                   </div>
+              
+              ';
+        }
+      }
+      else{
+        echo"Error";
+      }
+          ?>
           </div>
+          
     		
     		<div class="col-md-4">
     		    <div class="card profile-card-2">

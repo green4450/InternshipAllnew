@@ -5,16 +5,10 @@
 <?php
 //index.php
 
-$connect = new PDO("mysql:host=localhost;dbname=testing", "root", "");
+include './src/php/dbh.php';
 
-$query = "SELECT DISTINCT first_name FROM student_register";
-
-$statement = $connect->prepare($query);
-
-$statement->execute();
-
-$result = $statement->fetchAll();
-
+$query = "SELECT * FROM student_register";
+$res=mysqli_query($conn,$query);
 ?>
 
 <?php include 'includes/header_corporate.inc.php';?>
@@ -205,26 +199,29 @@ img{ max-width:100%;}
     <li><a href="#">Web Development</a></li>
   </ul>
 </div>  
-<div class="dropdown"style="margin-left:10px">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Students Applied
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">students Applied</a></li>
-    <li><a href="#">Automatched Students</a></li>
-  </ul>
-</div> 
+<select id='multi_search_filter' name='multi_search_filter'>
+
+
 </div>    
           <div class="inbox_chat">
             <div class="chat_list active_chat">
-              <div class="chat_people">
-                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                <div class="chat_ib">
-                  <h5>Akash Pandey <span class="chat_date">Dec 25</span></h5>
+            <?php
+            while($row=mysqli_fetch_assoc($res))
+            {
+              echo"
+              <div class='chat_list'>
+              <div class='chat_people'>
+                <div class='chat_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div>
+                <div class='chat_ib'>
+                  <h5>".$row['first_name']." <span class='chat_date'>Dec 25</span></h5>
                   <p>TTest, which is a new approach to have all solutions 
                     astrology under one roof.</p>
                 </div>
               </div>
             </div>
+            </div>";
+            }
+            ?>
             <div class="chat_list">
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
@@ -361,3 +358,29 @@ function openafileDialog() {
     $("#fileaLoader").click();
 }
     </script>
+    <script>
+$(document).ready(function(){
+
+ load_data();
+ 
+ function load_data(query='')
+ {
+  $.ajax({
+   url:"fetch_student.php",
+   method:"POST",
+   data:{query:query},
+   success:function(data)
+   {
+    $('tbody').html(data);
+   }
+  })
+ }
+
+ $('#multi_search_filter').change(function(){
+  $('#hidden_country').val($('#multi_search_filter').val());
+  var query = $('#hidden_country').val();
+  load_data(query);
+ });
+ 
+});
+</script>

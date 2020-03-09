@@ -84,9 +84,11 @@ body{font-family:Nunito,arial,sans-serif;}
 }
 </style>
 <div class="container w-75">
+<h3 class="text-center">On the basis of your location and criteria this is the auto match</h3>
+
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Microsoft</h5>
+    <h2 class="card-title">AICTE</h2>
     <h6 class="card-subtitle mb-2 text-muted">Internship for Big Data</h6>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
@@ -95,7 +97,7 @@ body{font-family:Nunito,arial,sans-serif;}
 <?php
 include './src/php/dbh.php';
 $city=$_GET['city'];
-$sql="SELECT * FROM `student_register` WHERE `student_register`.`location_u` = 'Dehradun'";
+$sql="SELECT * FROM `student_register` WHERE `student_register`.`location_u` = '$city'";
 $res=mysqli_query($conn,$sql);
 if($res)
 {

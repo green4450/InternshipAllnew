@@ -2,14 +2,6 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<?php
-//index.php
-
-include './src/php/dbh.php';
-
-$query = "SELECT * FROM student_register";
-$res=mysqli_query($conn,$query);
-?>
 
 <?php include 'includes/header_corporate.inc.php';?>
 <html>
@@ -19,7 +11,7 @@ $res=mysqli_query($conn,$query);
 
 </head>
 <style>
-.container{max-width:auto; margin:auto;}
+.container{max-width:100%; margin:auto;}
 img{ max-width:100%;}
 .inbox_people {
   background: #f8f8f8 none repeat scroll 0 0;
@@ -171,7 +163,7 @@ img{ max-width:100%;}
 <body>
 <div class="container">
 <h3 class=" text-center">Messaging</h3>
-<button type="button" style="margin-bottom:10px;"class="btn btn-primary">create Thread</button>
+<button type="button" class="btn btn-primary">create Thread</button>
 
 <div class="messaging">
       <div class="inbox_msg">
@@ -187,46 +179,24 @@ img{ max-width:100%;}
                 <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
                 </span> </div>
                 </div>
-          </div>  
-          <h2>Internship Tittle</h2>
-          <div class="row" style="margin-left:10px;margin-top:2px">
-          <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Python Programmer
+                <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Job Tittle
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
-    <li><a href="#">Python Programmer</a></li>
-    <li><a href="#">Cpp Programmer</a></li>
-    <li><a href="#">Web Development</a></li>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
   </ul>
-</div>  
-<select id='multi_search_filter' name='multi_search_filter'>
+</div>
 
-
-</div>    
+          </div>
+          
           <div class="inbox_chat">
             <div class="chat_list active_chat">
-            <?php
-            while($row=mysqli_fetch_assoc($res))
-            {
-              echo"
-              <div class='chat_list'>
-              <div class='chat_people'>
-                <div class='chat_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div>
-                <div class='chat_ib'>
-                  <h5>".$row['first_name']." <span class='chat_date'>Dec 25</span></h5>
-                  <p>TTest, which is a new approach to have all solutions 
-                    astrology under one roof.</p>
-                </div>
-              </div>
-            </div>
-            </div>";
-            }
-            ?>
-            <div class="chat_list">
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                 <div class="chat_ib">
-                  <h5>Akshay Rajput <span class="chat_date">Dec 25</span></h5>
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 
                     astrology under one roof.</p>
                 </div>
@@ -236,7 +206,7 @@ img{ max-width:100%;}
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                 <div class="chat_ib">
-                  <h5>Shivanshu Gupta <span class="chat_date">Dec 25</span></h5>
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 
                     astrology under one roof.</p>
                 </div>
@@ -246,7 +216,7 @@ img{ max-width:100%;}
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                 <div class="chat_ib">
-                  <h5>Neha Gupta <span class="chat_date">Dec 25</span></h5>
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 
                     astrology under one roof.</p>
                 </div>
@@ -256,7 +226,17 @@ img{ max-width:100%;}
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                 <div class="chat_ib">
-                  <h5>Sunil Kumar <span class="chat_date">Dec 25</span></h5>
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <p>Test, which is a new approach to have all solutions 
+                    astrology under one roof.</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat_list">
+              <div class="chat_people">
+                <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="chat_ib">
+                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 
                     astrology under one roof.</p>
                 </div>
@@ -340,47 +320,11 @@ img{ max-width:100%;}
               </div>
             </div>
            </div>
-           <input type="file" id="fileaLoader" name="files"   accept="image/png"  title="Load File" style="display:none"/>
-           <button class="btn btn-sm btn-info" onclick="openafileDialog()" type="button"><i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i></button>
-           <input type="file" id="fileLoader" name="files" title="Load File" style="display:none"/>
-           <button class="btn btn-sm btn-info" onclick="openfileDialog()" type="button"><i class="fa fa-file" aria-hidden="true"></i></button>
+           <button class="btn btn-sm btn-info" type="button"><i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i></button>
+           <button class="btn btn-sm btn-info" type="button"><i class="fa fa-file" aria-hidden="true"></i></button>
         </div>
 
       </div> 
     </div></div>
     </body>
     </html>
-    <script>
-    function openfileDialog() {
-    $("#fileLoader").click();
-}
-function openafileDialog() {
-    $("#fileaLoader").click();
-}
-    </script>
-    <script>
-$(document).ready(function(){
-
- load_data();
- 
- function load_data(query='')
- {
-  $.ajax({
-   url:"fetch_student.php",
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('tbody').html(data);
-   }
-  })
- }
-
- $('#multi_search_filter').change(function(){
-  $('#hidden_country').val($('#multi_search_filter').val());
-  var query = $('#hidden_country').val();
-  load_data(query);
- });
- 
-});
-</script>

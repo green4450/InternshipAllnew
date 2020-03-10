@@ -1,14 +1,13 @@
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
 
 <?php include 'includes/header_corporate.inc.php';?>
 <html>
 <head>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
 
 </head>
 <style>
@@ -189,15 +188,6 @@ img{ max-width:100%;}
     <li><a href="#">JavaScript</a></li>
   </ul>
 </div>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Automatched Interns
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div>
 
           </div>
           
@@ -206,13 +196,9 @@ img{ max-width:100%;}
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://agsol.com/wp-content/uploads/2018/09/new-microsoft-logo-SIZED-SQUARE.jpg" alt="sunil"> </div>
                 <div class="chat_ib">
-
                   <h5>Microsoft<span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 
                     astrology under one roof.</p>
-                    <button>called for interview
-                    </button>
-                    
                 </div>
               </div>
             </div>
@@ -223,9 +209,6 @@ img{ max-width:100%;}
                   <h5>Dell<span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 
                     astrology under one roof.</p>
-                    <button> On Hold
-                    </button>
-                    
                 </div>
               </div>
             </div>
@@ -236,8 +219,7 @@ img{ max-width:100%;}
                   <h5>Apple<span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 
                     astrology under one roof.</p>
-                    <button>Rejected
-                    </button>
+                </div>
               </div>
             </div>
           </div>
@@ -306,30 +288,3 @@ img{ max-width:100%;}
     </div></div>
     </body>
     </html>
-
-    <script>
-$(document).ready(function(){
-
- load_data();
- 
- function load_data(query='')
- {
-  $.ajax({
-   url:"fetch.php",
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('tbody').html(data);
-   }
-  })
- }
-
- $('#multi_search_filter').change(function(){
-  $('#hidden_country').val($('#multi_search_filter').val());
-  var query = $('#hidden_country').val();
-  load_data(query);
- });
- 
-});
-</script>

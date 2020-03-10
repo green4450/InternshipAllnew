@@ -50,7 +50,7 @@ else{
 }
 else
 {
-    echo"Error";
+    /* echo"Error"; */
 }
 
 if(isset($_POST['login_c']))
@@ -101,7 +101,7 @@ else{
 }
 else
 {
-    echo"Error";
+    /* echo"Error"; */
 }
 
 if(isset($_POST['login_dm']))
@@ -152,7 +152,7 @@ else{
 }
 else
 {
-    echo"Error";
+    /* echo"Error"; */
 }
 //corporate register
 if (isset($_POST['corporate-register'])) {
@@ -242,6 +242,38 @@ $expiration_date=mysqli_real_escape_string($conn,$_POST['expiration_date']);
    else
     {
     header("Location:../../post_internship.php?task=unsuccessful");
+}
+}
+
+if (isset($_POST['messageSend'])) {
+        $uid=mysqli_real_escape_string($conn,$_POST['userId']);
+        $user = mysqli_real_escape_string($conn, $_POST['user']);
+        $message = mysqli_real_escape_string($conn, $_POST['message']);
+        $company_id = mysqli_real_escape_string($conn, $_POST['company_id']);
+        $uid = mysqli_real_escape_string($conn, $_POST['uid']);
+        $date = mysqli_real_escape_string($conn, $_POST['date']);
+        $msg_from="";
+        $msg_from_name="";
+        $sql = "INSERT INTO `message`(`id`,`company_id`, `uid`, `msg_from`, `msg_from_name`, `msg`, `msg_date`) VALUES ('$company_id', '$uid', '$user','$msg_from','$msg_from_name', '$message', '$date');";
+	$res=mysqli_query($conn,$sql);
+}
+
+if(isset($_POST['loadData']))
+{
+	$sql1="SELECT `msg` FROM message";
+	$res1=mysqli_query($conn,$sql1);
+	while($row=mysqli_fetch_assoc($res1))
+	{
+	echo '
+	<div class="incoming_msg">
+	<div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+	<div class="received_msg">
+	  <div class="received_withd_msg">
+		<p>'.$row['msg'].'</p>
+		<span class="time_date"> 11:01 AM    |    Today</span></div>
+	</div>
+  </div>
+';
 }
 }
 ?>

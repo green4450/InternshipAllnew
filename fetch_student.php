@@ -1,61 +1,53 @@
-
 <?php
-
-//fetch.php
-
-include './src/php/dbh.php';
-
-if($_POST["query"] != '')
-{
- $search_array = explode(",", $_POST["query"]);
- $search_text = "'" . implode("', '", $search_array) . "'";
- $query = "
- SELECT * FROM student_register
- WHERE location IN (".$search_text.") 
- ORDER BY location DESC
- ";
-}
-else
-{
- $query = "SELECT * FROM student_register ORDER BY location DESC";
-}
-
-$statement = $conn->prepare($query);
-
-$statement->execute();
-
-$result = $statement->fetchAll();
-
-$total_row = $statement->rowCount();
-
+$connect = mysqli_connect("localhost", "root", "", "internal");
 $output = '';
-
-if($total_row > 0)
+if(isset($_POST["query"]))
 {
- foreach($result as $row)
- {
-  $output .= '
-  <div class="dropdown"style="margin-left:10px">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Students Applied
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">students Applied</a></li>
-    <li><a href="#">Automatched Students</a></li>
-  </ul>
-</div> 
-  ';
- }
+ $search = mysqli_real_escape_string($connect, $_POST["query"]);
+ $query ="SELECT * FROM student_register
+ WHERE city REGEXP '".$search."' 
+ OR country REGEXP '".$search."' 
+ OR category REGEXP '".$search."' 
+ OR experience REGEXP '".$search."' 
+ OR duration REGEXP '".$search."' 
+ OR requirements REGEXP '".$search."' 
+ OR salary REGEXP '".$search."' 
+ ";
+
 }
 else
 {
- $output .= '
- <tr>
-  <td colspan="5" align="center">No Data Found</td>
- </tr>
- ';
+ $query = "SELECT * FROM tblipinternshala ORDER BY id";
 }
+$result = mysqli_query($connect, $query);
+if(mysqli_num_rows($result) > 0)
+{
+while( $records = mysqli_fetch_assoc($result) ) {
+?>
+  <div class="card mt-2">
+      <div class="card-body">
 
-echo $output;
-
-
+          <h5 class="mb-2 text-success float-right"><?php echo $records['salary'];?>.</h5>
+          <a class="card-title h2"><?php echo $records["title"];?></a>
+          <p class="mt-2 mb-2 card-text">
+            <?php echo $records['content'];?>
+          </p>
+          <br>
+          <h4 class="mt-2 mb-2"><span class="font-weight-bold">Requirements:</span> <span class="text-info"><?php echo $records['requirements'];?></span></h4>
+          <br>
+          <h5 class="mb-2"><b>City:</b> <?php echo $records['city'];?></h5>
+          <h5 class="mb-2 text-primary"><b>Category:</b> <?php echo $records['category'];?></h5>
+          <h5 class="mb-2"><b>Duration:</b><?php echo $records['duration'];?>.</h5>
+          <h5 class="mb-2"><b>Start Date:</b><?php echo $records['date'];?>.</h5>
+          <h5 class="mb-2"><b>Working Hours:</b><?php echo $records['working_hours'];?>.</h5>
+          
+          <br>
+          <center>
+            <a href=<?php echo $records['url'];?> class="btn w-50 btn-primary">Apply</a>
+          </center>
+      </div>
+  </div>
+<?php
+}
+}
 ?>

@@ -283,8 +283,10 @@ img{ max-width:100%;}
               </div>
             </div> -->
            </div>
-           <button class="btn btn-sm btn-info" type="button"><i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i></button>
-           <button class="btn btn-sm btn-info" type="button"><i class="fa fa-file" aria-hidden="true"></i></button>
+           <input type="file" id="file" name="file" style="display:none">
+           <button  class="btn btn-sm btn-info"id="id5" onclick="new1()" type="button"><i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i></button>
+           <button class="btn btn-sm btn-info"  onclick="new1()" type="button"><i class="fa fa-file" aria-hidden="true"></i></button>
+        </div>
         </div>
 
       </div> 
@@ -334,6 +336,10 @@ setInterval(() => {
     loadData: true
   })
 }, 1000)
+
+function new1() {
+    $( "#file" ).click();
+};
 </script>
     </body>
     </html>

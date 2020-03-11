@@ -140,7 +140,7 @@ if($res)
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Call for Internview</button>
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">Hold</button>
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">Reject</button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">Message</button>
+                          <a href="./chat_profile_student.php" class="btn btn-primary">Message</a>
 
                       </div>
                       </div>
@@ -179,7 +179,7 @@ echo'          <div class="col-md-4">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Call for Internview</button>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">Hold</button>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">Reject</button>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">Message</button>
+              <a href="./chat_profile_student.php?uid='.$row['uid'].' class="btn btn-primary">Message</a>
 
           </div>
           </div>
@@ -207,6 +207,9 @@ echo'          <div class="col-md-4">
         </button> -->
       </div>
       <div class="modal-body">
+      <h5>Interview Details</h5>
+      <textarea name="id4" id="id4" cols="50" rows="10">
+        </textarea>
       <form class="form" action="##" method="post" id="registrationForm">
                       <div class="form-group">
                           

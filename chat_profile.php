@@ -186,6 +186,7 @@ img{ max-width:100%;}
   <option value="Applied">Applied</option>
   <option value="Hold">Hold</option>
   <option value="Rejected">Rejected</option>
+  <option value="Rejected">Automatched</option>
   </select>
 </div>
 <button name="submit_search" class="btn btn-primary mt-2" type="submit">Search</button>
@@ -221,6 +222,31 @@ img{ max-width:100%;}
 			';
 			}
 		}
+	}
+	else
+	{
+		$sql="SELECT * FROM student_register";
+		$res = mysqli_query($conn,$sql);
+		if($res)
+		{
+			while($row=mysqli_fetch_assoc($res))
+			{
+	echo '
+
+	<div class="chat_list">
+	  <div class="chat_people">
+		<div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+		<div class="chat_ib">
+		  <h5>'.$row['first_name'].'<span class="chat_date">Dec 25</span></h5>
+		  <p>Test, which is a new approach to have all solutions 
+			astrology under one roof.</p>
+		</div>
+	  </div>
+	</div>
+	';
+	}
+}
+
 	}
 			?>
           </div>
@@ -259,14 +285,14 @@ const sendMsg = () => {
         date = new Date()
     var pageURL = window.location.href;
         url = new URL(pageURL);
-        projectId = 'dsfsdf';
-        userId = 'dsfsdf';
-        userName = 'dsfsdf';
+        projectId = 'company';
+        userId = 'company';
+        userName = 'company';
     if (!message) {
         console.log("No Message Found")
     } else {
         $.post("./src/php/main.php", {
-            company_id:"adsdas",
+            company_id:"company",
             userId: userId,
             user: userName,
             message: message,

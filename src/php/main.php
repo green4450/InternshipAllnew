@@ -276,4 +276,23 @@ if(isset($_POST['loadData']))
 ';
 }
 }
+
+if(isset($_POST['loadData_company']))
+{
+	$sql1="SELECT `msg` FROM message";
+	$res1=mysqli_query($conn,$sql1);
+	while($row=mysqli_fetch_assoc($res1))
+	{
+	echo '
+	<div class="incoming_msg">
+	<div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+	<div class="received_msg">
+	  <div class="received_withd_msg">
+		<p>'.$row['msg'].'</p>
+		<span class="time_date"> 11:01 AM    |    Today</span></div>
+	</div>
+  </div>
+';
+}
+}
 ?>

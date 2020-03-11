@@ -135,10 +135,10 @@ if($res)
                           </h5>
                           <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry standard dummy text</p>
                           <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
-                          <button class="btn btn-sm btn-primary">Call for Internview</button>
-                          <button class="btn btn-sm btn-primary">Hold</button>
-                          <button class="btn btn-sm btn-primary">Reject</button>
-                          <button href="./chat_profile.php" class="btn btn-sm btn-primary">Message</button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Call for Internview</button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">Hold</button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">Reject</button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">Message</button>
 
                       </div>
                       </div>
@@ -152,144 +152,133 @@ if($res)
       }
           ?>
           </div>
-          
-    		<!-- 
-    		<div class="col-md-4">
-    		    <div class="card profile-card-2">
-                        <div class="form-group float-right form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        </div>
-                    <div class="card-img-block">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
-                    </div>
-                    <div class="card-body pt-5">
-                        <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile"/>
-                        <h5 class="card-title">
-                        <a href="./user_profile.php">
-                        Test User 2
-                        </a>
-                        </h5>
-                        <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry's standard dummy text</p>
-                        <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
-                        <button class="btn btn-sm btn-primary">Call for Internview</button>
-                          <button class="btn btn-sm btn-primary">Hold</button>
-                          <button class="btn btn-sm btn-primary">Reject</button>
-                    </div>
-                </div>
-    		</div>
-    		<div class="col-md-4">
-    		    <div class="card profile-card-2">
-                        <div class="form-group float-right form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        </div>
-                    <div class="card-img-block">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
-                    </div>
-                    <div class="card-body pt-5">
-                        <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile"/>
-                        <h5 class="card-title">Test User 3</h5>
-                        <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry's standard dummy text</p>
-                        <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
-                        <button class="btn btn-sm btn-primary">Call for Internview</button>
-                          <button class="btn btn-sm btn-primary">Hold</button>
-                          <button class="btn btn-sm btn-primary">Reject</button>
-                    </div>
-                </div>
-    		</div>
-    		<div class="col-md-4">
-    		    <div class="card profile-card-2">
-                        <div class="form-group float-right form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                          
-                        </div>
-                    <div class="card-img-block">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
-                    </div>
-                    <div class="card-body pt-5">
-                        <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile"/>
-                        <h5 class="card-title">
-                        <a href="./user_profile.php">
-                        Test User 4
-                        </a>
-                        </h5>
-                        <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry's standard dummy text</p>
-                        <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
-                        <button class="btn btn-sm btn-primary">Call for Internview</button>
-                          <button class="btn btn-sm btn-primary">Hold</button>
-                          <button class="btn btn-sm btn-primary">Reject</button>
-                    </div>
-                </div>
-    		</div>
-    		<div class="col-md-4">
-    		    <div class="card profile-card-2">
-                        <div class="form-group float-right form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        </div>
-                    <div class="card-img-block">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
-                    </div>
-                    <div class="card-body pt-5">
-                        <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile"/>
-                        <h5 class="card-title">Test User 5</h5>
-                        <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry's standard dummy text</p>
-                        <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
-                        <button class="btn btn-sm btn-primary">Call for Internview</button>
-                          <button class="btn btn-sm btn-primary">Hold</button>
-                          <button class="btn btn-sm btn-primary">Reject</button>
-                    </div>
-                </div>
-    		</div>
-    		<div class="col-md-4">
-    		    <div class="card profile-card-2">
-                        <div class="form-group float-right form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        </div>
-                    <div class="card-img-block">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
-                    </div>
-                    <div class="card-body pt-5">
-                        <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile"/>
-                        <h5 class="card-title">
-                        <a href="./user_profile.php">
-                        Test User 6
-                        </a>
-                        </h5>
-                        <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry's standard dummy text</p>
-                        <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
-                        <button class="btn btn-sm btn-primary">Call for Internview</button>
-                          <button class="btn btn-sm btn-primary">Hold</button>
-                          <button class="btn btn-sm btn-primary">Reject</button>
-                    </div>
-                </div>
-    		</div>
-    		<div class="col-md-4">
-    		    <div class="card profile-card-2">
-                        <div class="form-group float-right form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                  </div>
-                    <div class="card-img-block">
-                        <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
-                    </div>
-                    <div class="card-body pt-5">
-                        <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile"/>
-                        
-                        
-                        
-                        <h5 class="card-title">
-                        <a href="./user_profile.php">  
-                        Test User 7
-                        </a>
-                        </h5>
-                        <p class="card-text">Lorem Ipsum is simply dummy text Lorem Ipsum has been the industry's standard dummy text</p>
-                        <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
-                        <button class="btn btn-sm btn-primary">Call for Internview</button>
-                          <button class="btn btn-sm btn-primary">Hold</button>
-                          <button class="btn btn-sm btn-primary">Reject</button>
-
-                    </div>
-                </div>
-    		</div>
-    	     -->
     	</div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Information of a candidate</h5>
+
+
+      <!--   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="modal-body">
+      <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>Interview Location</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Interview Location" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Interview Timing</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Interview Timing" title="enter your last name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Documents Required</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="Documents Required" title="enter your phone number if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Contact person email</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Contact person email" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Information of a candidate</h5>
+
+
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+      </div>
+      <div class="modal-body">
+      <h6>Please Enter the Reason for Keeping the Intern on Hold</h6>
+        <textarea name="id4" id="id4" cols="50" rows="10">
+        </textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Information of a candidate</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+      </div>
+      <div class="modal-body">
+      <h6>Please Enter the Reason for Rejecting the candidate</h6>
+        <textarea name="id4" id="id4" cols="50" rows="10">
+        </textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Information of a candidate</h5>
+
+
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <h6>Please write the Message Below</h6>
+        <textarea name="id4" id="id4" cols="50" rows="10">
+        </textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+   $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
